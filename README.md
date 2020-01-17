@@ -71,4 +71,4 @@ nosetests
 ## 贡献
 
 - 通过 Github Issues 提交评论或建议。
-- 直接提交 Pull Request 必须没问题。
+- 直接提交 Pull Requests 必须没问题。
