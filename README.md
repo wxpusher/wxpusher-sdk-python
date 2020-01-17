@@ -1,6 +1,9 @@
 # WxPusher
 
 [![PyPI version](https://badge.fury.io/py/wxpusher.svg)](https://badge.fury.io/py/wxpusher)
+[![PyPI license](https://img.shields.io/pypi/l/wxpusher.svg)](https://pypi.python.org/pypi/wxpusher/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/wxpusher.svg)](https://pypi.python.org/pypi/wxpusher/)
+[![Downloads](https://pepy.tech/badge/wxpusher)](https://pepy.tech/project/wxpusher)
 
 WxPusher Python client.
 
