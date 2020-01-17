@@ -4,7 +4,7 @@
 File: wxpusher.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: WxPusher Python Client.
+Description: WxPusher Python SDK.
 """
 import requests
 
@@ -14,7 +14,7 @@ BASEURL = 'http://wxpusher.zjiecode.com/api'
 
 
 class WxPusher():
-    """WxPusher Python Client."""
+    """WxPusher Python SDK."""
     default_token = None
 
     @classmethod

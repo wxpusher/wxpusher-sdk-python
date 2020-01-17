@@ -38,7 +38,7 @@ EXTRAS_REQUIRE = {
 }
 
 DESCRIPTION = (
-    'WxPusher Python Client.'
+    'WxPusher Python SDK.'
 )
 
 

@@ -7,17 +7,17 @@
 
 WxPusher Python SDK.
 
-*其他语言版本: [English](README-en.md), [简体中文](README.md).*
+*Read this in other languages: [English](README-en.md), [简体中文](README.md).*
 
-## 入门指南
+## Getting Started
 
-### 安装
+### Installation
 
 ```shell
 pip install -U wxpusher
 ```
 
-### 使用
+### Usage
 
 ```python
 from wxpusher import WxPusher
@@ -27,30 +27,30 @@ WxPusher.create_qrcode('<extra>', '<validTime>', '<appToken>')
 WxPusher.query_user('<page>', '<page_size>', '<appToken>')
 ```
 
-## 运行测试
+## Running the tests
 
-### 配置
+### Setup configuration
 
-运行测试需要配置好 `appToken` 和 `uids`。
+Configuration is necessary since the tests depend on VALID `appToken` and `uids`.
 
-首先，将 `wxpusher/tests/` 文件夹下的配置样例 `config.sample.py` 复制并命名为 `config.py`。
+Frist, copy the configuration sample `config.sample.py` under `python/wxpusher/tests/` to `config.py`
 
 ```shell
 cd python/wxpusher/tests
 cp config.sample.py config.py
 ```
 
-然后，填写 `config.py` 中的相应信息。
+Then, fill in the corresponding information in `config.py`.
 
-### 启动测试
+### Trigger the tests
 
-配置好后就可以使用 `tox` 来运行测试了。
+With proper configuration, you can run the tests with tox
 
 ```shell
 tox
 ```
 
-或者直接使用 `nose` 也可以
+or nose directly
 
 ```shell
 nosetests
@@ -58,17 +58,17 @@ nosetests
 
 ## TODO
 
-- [x] 基本架构并上传到 PyPI
-- [x] 发送消息.
-- [x] 查询消息.
-- [x] 创建二维码.
-- [x] 查询用户.
-- [ ] 更完备的客户端验证.
-- [ ] 命令行脚本.
-- [ ] 更完善的文档.
-- [ ] 更完备的单元测试.
+- [x] Basic structure with PyPI uploaded.
+- [x] Send Message.
+- [x] Query Message.
+- [x] Create QRCode.
+- [x] Query User.
+- [ ] More client validators.
+- [ ] Command line scripts.
+- [ ] Better documentation.
+- [ ] More robust unittest.
 
-## 贡献
+## Contribution
 
-- 通过 Github Issues 提交评论或建议。
-- 直接提交 Pull Request 必须没问题。
+- Comments or suggestions via github issues.
+- Pull requests are welcome absolutely.
