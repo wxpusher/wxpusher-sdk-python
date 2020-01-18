@@ -36,7 +36,7 @@ WxPusher.query_user('<page>', '<page_size>', '<appToken>')
 首先，将 `wxpusher/tests/` 文件夹下的配置样例 `config.sample.py` 复制并命名为 `config.py`。
 
 ```shell
-cd python/wxpusher/tests
+cd wxpusher/tests
 cp config.sample.py config.py
 ```
 

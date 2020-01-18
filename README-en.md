@@ -33,10 +33,10 @@ WxPusher.query_user('<page>', '<page_size>', '<appToken>')
 
 Configuration is necessary since the tests depend on VALID `appToken` and `uids`.
 
-Frist, copy the configuration sample `config.sample.py` under `python/wxpusher/tests/` to `config.py`
+Frist, copy the configuration sample `config.sample.py` under `wxpusher/tests/` to `config.py`
 
 ```shell
-cd python/wxpusher/tests
+cd wxpusher/tests
 cp config.sample.py config.py
 ```
 
