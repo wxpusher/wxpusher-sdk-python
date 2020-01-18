@@ -49,8 +49,8 @@ BASE_URL = f'{PROJECT_URL}/blob/v{VERSION}'
 def readme():
     """Parse README for long_description."""
     content = open('README.md').read()
-    content = content.replace('README-en.md', f'{BASE_URL}/README-en.md', 1)
     content = content.replace('README.md', f'{BASE_URL}/README.md', 1)
+    content = content.replace('README-en.md', f'{BASE_URL}/README-en.md', 1)
     return content
 
 
