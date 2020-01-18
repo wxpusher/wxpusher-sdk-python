@@ -43,7 +43,8 @@ DESCRIPTION = (
 
 VERSION = open('VERSION').read().strip()
 PROJECT_URL = 'https://github.com/wxpusher/wxpusher-sdk-python'
-BASE_URL= f'{PROJECT_URL}/blob/v{VERSION}'
+BASE_URL = f'{PROJECT_URL}/blob/v{VERSION}'
+
 
 def readme():
     """Parse README for long_description."""
