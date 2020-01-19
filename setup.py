@@ -41,6 +41,15 @@ DESCRIPTION = (
     'WxPusher Python SDK.'
 )
 
+KEYWORDS = [
+    'wxpusher',
+    'wechat',
+    'weixin',
+    'notification',
+    'push-notification',
+    'python-sdk',
+]
+
 VERSION = open('VERSION').read().strip()
 PROJECT_URL = 'https://github.com/wxpusher/wxpusher-sdk-python'
 BASE_URL = f'{PROJECT_URL}/blob/v{VERSION}'
@@ -60,8 +69,8 @@ setup(name='wxpusher',
       long_description=readme(),
       long_description_content_type='text/markdown',
       classifiers=CLASSIFIERS,
-      keywords='wxpusher wechat push-notification',
-      url='https://github.com/wxpusher/wxpusher-sdk-python',
+      keywords=' '.join(KEYWORDS),
+      url=PROJECT_URL,
       author='Xuan (Sean) Hu',
       author_email='i+wxpusher@huxuan.org',
       license='Apache License 2.0',
