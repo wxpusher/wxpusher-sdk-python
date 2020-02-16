@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # Custom
-config.py
 .vscode
 Pipfile.lock
+config.py
