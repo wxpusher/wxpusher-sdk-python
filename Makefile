@@ -1,5 +1,8 @@
 .PHONY: clean install lint flake8 pylint test dist upload
 
+PIPENV := $(shell command -v pipenv > /dev/null && echo env)
+PIPRUN := $(shell command -v pipenv > /dev/null && echo pipenv run)
+
 clean:
 	find . -name '*.pyc' -print0 | xargs -0 rm -f
 	find . -name '*.swp' -print0 | xargs -0 rm -f
@@ -9,15 +12,15 @@ clean:
 	-rm -rf .tox .coverage
 
 install:
-	pip install .
+	pip$(PIPENV) install .
 
 lint: flake8 pylint
 
 flake8:
-	flake8 setup.py wxpusher
+	${PIPRUN} flake8 setup.py wxpusher
 
 pylint:
-	pylint setup.py wxpusher
+	${PIPRUN} pylint setup.py wxpusher
 
 test:
 	tox

@@ -21,22 +21,6 @@ INSTALL_REQUIRES = [
     'requests'
 ]
 
-DEV_REQUIRES = [
-    'pycodestyle',
-    'pyflakes',
-    'pylint'
-]
-
-TEST_REQUIRES = [
-    'coverage',
-    'nose'
-]
-
-EXTRAS_REQUIRE = {
-    'dev': DEV_REQUIRES,
-    'test': TEST_REQUIRES
-}
-
 DESCRIPTION = (
     'WxPusher Python SDK.'
 )
@@ -76,6 +60,5 @@ setup(name='wxpusher',
       license='Apache License 2.0',
       packages=['wxpusher'],
       install_requires=INSTALL_REQUIRES,
-      extras_require=EXTRAS_REQUIRE,
       python_requires='>=3',
       include_package_data=True)
