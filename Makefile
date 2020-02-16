@@ -1,4 +1,4 @@
-.PHONY: clean install dev lint pycodestyle pyflakes pylint test dist upload
+.PHONY: clean install lint flake8 pylint test dist upload
 
 clean:
 	find . -name '*.pyc' -print0 | xargs -0 rm -f
@@ -11,19 +11,13 @@ clean:
 install:
 	pip install .
 
-dev:
-	pip install .[dev]
+lint: flake8 pylint
 
-lint: pycodestyle pyflakes pylint
-
-pycodestyle:
-	-pycodestyle setup.py wxpusher
-
-pyflakes:
-	-pyflakes setup.py wxpusher
+flake8:
+	flake8 setup.py wxpusher
 
 pylint:
-	-pylint setup.py wxpusher
+	pylint setup.py wxpusher
 
 test:
 	tox
