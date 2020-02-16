@@ -18,14 +18,14 @@ class WxPusher():
     default_token = None
 
     @classmethod
-    def send_message(cls, content, uids, token=None, **kwargs):
+    def send_message(cls, content, **kwargs):
         """Send Message."""
         payload = {
-            'appToken': cls.get_token(token),
+            'appToken': cls.get_token(kwargs.get('token')),
             'content': content,
             'contentType': kwargs.get('content_type', 1),
             'topicIds': kwargs.get('topic_ids', []),
-            'uids': uids,
+            'uids': kwargs.get('uids', []),
             'url': kwargs.get('url')
         }
         url = f'{BASEURL}/send/message'

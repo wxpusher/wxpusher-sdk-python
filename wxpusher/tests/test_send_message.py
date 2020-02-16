@@ -20,11 +20,22 @@ class TestSendMessage(unittest.TestCase):
     def setUpClass(cls):
         WxPusher.default_token = config.TOKEN
 
-    def test_send_message(self):
-        """Positive case for sending message."""
+    def test_send_message_uid(self):
+        """Positive case for sending message with uid."""
         res = WxPusher.send_message(
-            self.test_send_message.__doc__,
-            config.UIDS,
+            self.test_send_message_uid.__doc__,
+            uids=config.UIDS,
+            url='http://example.com/'
+        )
+        self.assertIsInstance(res, dict)
+        self.assertIn('code', res)
+        self.assertEqual(1000, res['code'])
+
+    def test_send_message_topic_id(self):
+        """Positive case for sending message with topic_id."""
+        res = WxPusher.send_message(
+            self.test_send_message_topic_id.__doc__,
+            topic_ids=config.TOPIC_IDS,
             url='http://example.com/'
         )
         self.assertIsInstance(res, dict)

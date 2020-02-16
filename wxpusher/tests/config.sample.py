@@ -13,3 +13,8 @@ TOKEN = ''
 UIDS = [
     ''
 ]
+
+# the `topic_ids` for test, note that it should be a list.
+TOPIC_IDS = [
+    ''
+]
