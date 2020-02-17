@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+Unittest for querying user.
+
 File: test_send_message.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: Unittest for querying user.
 """
 import random
 import unittest
@@ -19,12 +20,13 @@ class TestSendMessage(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """Set up for class."""
         WxPusher.default_token = config.TOKEN
 
     def test_query_user(self):
         """Positive case for querying user."""
         res = WxPusher.query_user(
-            1, random.randint(1, 99)
+            1, random.randint(1, 99),
         )
         self.assertIsInstance(res, dict)
         self.assertIn('code', res)

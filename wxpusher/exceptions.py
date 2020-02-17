@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+WxPusher Exceptions.
+
 File: exceptions.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: WxPusher Exceptions.
 """
 
 

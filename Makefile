@@ -1,4 +1,7 @@
-.PHONY: clean install dev lint pycodestyle pyflakes pylint test dist upload
+.PHONY: clean install lint flake8 pylint test dist upload
+
+PIPENV := $(shell command -v pipenv > /dev/null && echo env)
+PIPRUN := $(shell command -v pipenv > /dev/null && echo pipenv run)
 
 clean:
 	find . -name '*.pyc' -print0 | xargs -0 rm -f
@@ -9,21 +12,15 @@ clean:
 	-rm -rf .tox .coverage
 
 install:
-	pip install .
+	pip$(PIPENV) install .
 
-dev:
-	pip install .[dev]
+lint: flake8 pylint
 
-lint: pycodestyle pyflakes pylint
-
-pycodestyle:
-	-pycodestyle setup.py wxpusher
-
-pyflakes:
-	-pyflakes setup.py wxpusher
+flake8:
+	${PIPRUN} flake8 setup.py wxpusher
 
 pylint:
-	-pylint setup.py wxpusher
+	${PIPRUN} pylint setup.py wxpusher
 
 test:
 	tox

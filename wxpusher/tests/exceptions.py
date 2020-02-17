@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+Custom exceptions for unittest.
+
 File: exceptions.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: Custom exceptions for unittest.
 """
 from wxpusher import WxPusherException
 
