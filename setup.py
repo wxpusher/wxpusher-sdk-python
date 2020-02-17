@@ -40,14 +40,13 @@ KEYWORDS = [
     'python-sdk',
 ]
 
-VERSION = None
 try:
-    VERSION = get_distribution(NAME).version
+    VERSION = f'v{get_distribution(NAME).version}'
 except DistributionNotFound:
-    pass
+    VERSION = 'master'
 
 PROJECT_URL = 'https://github.com/wxpusher/wxpusher-sdk-python'
-BASE_URL = f'{PROJECT_URL}/blob/v{VERSION}'
+BASE_URL = f'{PROJECT_URL}/blob/{VERSION}'
 
 
 def readme():
