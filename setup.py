@@ -7,6 +7,7 @@ File: setup.py
 Author: huxuan
 Email: i(at)huxuan.org
 """
+from pkg_resources import DistributionNotFound
 from pkg_resources import get_distribution
 
 from setuptools import setup
@@ -39,7 +40,12 @@ KEYWORDS = [
     'python-sdk',
 ]
 
-VERSION = get_distribution(NAME).version
+VERSION = None
+try:
+    VERSION = get_distribution(NAME).version
+except DistributionNotFound:
+    pass
+
 PROJECT_URL = 'https://github.com/wxpusher/wxpusher-sdk-python'
 BASE_URL = f'{PROJECT_URL}/blob/v{VERSION}'
 
@@ -63,9 +69,7 @@ setup(name=NAME,
       author_email='i+wxpusher@huxuan.org',
       license='Apache License 2.0',
       packages=['wxpusher'],
-      use_scm_version={
-          'write_to': 'wxpusher/version.py',
-      },
+      use_scm_version=True,
       setup_requires=['setuptools_scm'],
       install_requires=INSTALL_REQUIRES,
       python_requires='>=3',
