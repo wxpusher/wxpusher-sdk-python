@@ -15,5 +15,3 @@ __all__ = [
     'WxPusherException',
     'WxPusherNoneTokenException'
 ]
-
-__version__ = open('VERSION').read().strip()

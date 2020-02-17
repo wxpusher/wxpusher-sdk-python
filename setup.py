@@ -6,7 +6,10 @@ Author: huxuan
 Email: i(at)huxuan.org
 Description: Python packaging for wxpusher.
 """
+from pkg_resources import get_distribution
 from setuptools import setup
+
+NAME = 'wxpusher'
 
 CLASSIFIERS = [
     'Development Status :: 4 - Beta',
@@ -34,7 +37,7 @@ KEYWORDS = [
     'python-sdk',
 ]
 
-VERSION = open('VERSION').read().strip()
+VERSION = get_distribution(NAME).version
 PROJECT_URL = 'https://github.com/wxpusher/wxpusher-sdk-python'
 BASE_URL = f'{PROJECT_URL}/blob/v{VERSION}'
 
@@ -47,8 +50,7 @@ def readme():
     return content
 
 
-setup(name='wxpusher',
-      version=VERSION,
+setup(name=NAME,
       description=DESCRIPTION,
       long_description=readme(),
       long_description_content_type='text/markdown',
@@ -59,6 +61,10 @@ setup(name='wxpusher',
       author_email='i+wxpusher@huxuan.org',
       license='Apache License 2.0',
       packages=['wxpusher'],
+      use_scm_version={
+          'write_to': 'wxpusher/version.py'
+      },
+      setup_requires=['setuptools_scm'],
       install_requires=INSTALL_REQUIRES,
       python_requires='>=3',
       include_package_data=True)
