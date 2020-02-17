@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+Init for unittest.
+
 File: __init__.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: Init for unittest.
 """
 from . import exceptions
 

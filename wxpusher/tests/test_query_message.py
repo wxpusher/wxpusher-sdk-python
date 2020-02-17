@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+Unittest for querying message.
+
 File: test_send_message.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: Unittest for querying message.
 """
-import unittest
 import random
+import unittest
 
 from wxpusher import WxPusher
 

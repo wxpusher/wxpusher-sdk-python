@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+WxPusher Python SDK.
+
 File: wxpusher.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: WxPusher Python SDK.
 """
 import requests
 
@@ -15,6 +16,7 @@ BASEURL = 'http://wxpusher.zjiecode.com/api'
 
 class WxPusher():
     """WxPusher Python SDK."""
+
     default_token = None
 
     @classmethod
@@ -26,7 +28,7 @@ class WxPusher():
             'contentType': kwargs.get('content_type', 1),
             'topicIds': kwargs.get('topic_ids', []),
             'uids': kwargs.get('uids', []),
-            'url': kwargs.get('url')
+            'url': kwargs.get('url'),
         }
         url = f'{BASEURL}/send/message'
         return requests.post(url, json=payload).json()
@@ -43,7 +45,7 @@ class WxPusher():
         payload = {
             'appToken': cls._get_token(token),
             'extra': extra,
-            'validTime': valid_time
+            'validTime': valid_time,
         }
         url = f'{BASEURL}/fun/create/qrcode'
         return requests.post(url, json=payload).json()
@@ -54,7 +56,7 @@ class WxPusher():
         payload = {
             'appToken': cls._get_token(token),
             'page': page,
-            'pageSize': page_size
+            'pageSize': page_size,
         }
         url = f'{BASEURL}/fun/wxuser'
         return requests.get(url, params=payload).json()

@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+Python packaging for wxpusher.
+
 File: setup.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: Python packaging for wxpusher.
 """
 from pkg_resources import get_distribution
+
 from setuptools import setup
 
 NAME = 'wxpusher'
@@ -17,11 +19,11 @@ CLASSIFIERS = [
     'License :: OSI Approved :: Apache Software License',
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3 :: Only',
-    'Topic :: Utilities'
+    'Topic :: Utilities',
 ]
 
 INSTALL_REQUIRES = [
-    'requests'
+    'requests',
 ]
 
 DESCRIPTION = (
@@ -62,7 +64,7 @@ setup(name=NAME,
       license='Apache License 2.0',
       packages=['wxpusher'],
       use_scm_version={
-          'write_to': 'wxpusher/version.py'
+          'write_to': 'wxpusher/version.py',
       },
       setup_requires=['setuptools_scm'],
       install_requires=INSTALL_REQUIRES,

@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+Unittest for sending message.
+
 File: test_send_message.py
 Author: huxuan
 Email: i(at)huxuan.org
-Description: Unittest for sending message.
 """
 import unittest
 
@@ -18,6 +19,7 @@ class TestSendMessage(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """Set up for class."""
         WxPusher.default_token = config.TOKEN
 
     def test_send_message_uid(self):
@@ -25,7 +27,7 @@ class TestSendMessage(unittest.TestCase):
         res = WxPusher.send_message(
             self.test_send_message_uid.__doc__,
             uids=config.UIDS,
-            url='http://example.com/'
+            url='http://example.com/',
         )
         self.assertIsInstance(res, dict)
         self.assertIn('code', res)
@@ -36,7 +38,7 @@ class TestSendMessage(unittest.TestCase):
         res = WxPusher.send_message(
             self.test_send_message_topic_id.__doc__,
             topic_ids=config.TOPIC_IDS,
-            url='http://example.com/'
+            url='http://example.com/',
         )
         self.assertIsInstance(res, dict)
         self.assertIn('code', res)
