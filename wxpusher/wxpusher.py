@@ -25,6 +25,7 @@ class WxPusher():
         payload = {
             'appToken': cls._get_token(kwargs.get('token')),
             'content': content,
+            'summary': kwargs.get('summary'),
             'contentType': kwargs.get('content_type', 1),
             'topicIds': kwargs.get('topic_ids', []),
             'uids': kwargs.get('uids', []),
