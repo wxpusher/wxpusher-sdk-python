@@ -22,8 +22,8 @@ pip install -U wxpusher
 ```python
 from wxpusher import WxPusher
 WxPusher.send_message('<content>',
-                      uids='<uids>',
-                      topic_ids='<topic_ids>',
+                      uids=['<uids>'],
+                      topic_ids=['<topic_ids>'],
                       token='<appToken>')
 WxPusher.query_message('<messageId>')
 WxPusher.create_qrcode('<extra>', '<validTime>', '<appToken>')
