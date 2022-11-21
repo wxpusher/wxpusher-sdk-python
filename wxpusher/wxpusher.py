@@ -29,6 +29,7 @@ class WxPusher():
             'contentType': kwargs.get('content_type', 1),
             'topicIds': kwargs.get('topic_ids', []),
             'uids': kwargs.get('uids', []),
+            'verifyPay': kwargs.get('verify'),
             'url': kwargs.get('url'),
         }
         url = f'{BASEURL}/send/message'
