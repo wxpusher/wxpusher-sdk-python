@@ -31,6 +31,7 @@ class WxPusher():
             'uids': kwargs.get('uids', []),
             'verifyPay': kwargs.get('verify'),
             'url': kwargs.get('url'),
+            'verifyPayType': kwargs.get('verifyPayType'),
         }
         url = f'{BASEURL}/send/message'
         return requests.post(url, json=payload).json()
